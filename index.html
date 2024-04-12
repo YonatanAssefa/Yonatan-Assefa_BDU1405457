@@ -1,0 +1,93 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  </head>
+  <body>
+    <header class="animate__animated animate__fadeInDown">
+      <nav>
+        <ul>
+          <li><a href="#home" class="animate__animated animate__fadeIn">Home</a></li>
+          <li><a href="#about" class="animate__animated animate__fadeIn">About</a></li>
+          <li><a href="#portfolio" class="animate__animated animate__fadeIn">Portfolio</a></li>
+          <li><a href="#contact" class="animate__animated animate__fadeIn">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="animate__animated animate__fadeIn">
+      <h2>Welcome to my Portfolio</h2>
+      <p>Check out my projects below!</p>
+      <a href="#portfolio" class="btn animate__animated animate__fadeInUp">View Portfolio</a>
+      
+    </section>
+    
+    <section id="about" style="display: none;" class="animate__animated animate__fadeIn">
+      <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="1.jpg">
+            </div>
+            <div class="about-col-2">
+                  <h2>About Me</h2>
+                  <p>Date of birth: Sep 14 2003</p>
+                  <p>Nationlity: Ethiopian</p>
+                  <p>I am Yonatan Assefa a passionate programmer who has attended primary and secondary school in Bahir Dar city. I am now studying software Engineering in Bahir Dar University. 
+                    I have always been interested in advancing on programming. In the recent years, I have introduced myself to python programming. I have worked with various libraries and have a general clue of machine learning. 
+                    Furthermore, I appreciate music theory and I would love to work on the intersection of these two interesting areas, music and programming.</p>
+          </section>
+
+    <section id="portfolio" style="display: none;" class="animate__animated animate__fadeIn">
+      <h2>Portfolio</h2>
+      <p>Here are some of the projects I've worked on:</p>
+      <div class="project animate__animated animate__fadeInLeft">
+        <h3>House Rental Management System</h3>
+        <p>A system for managing rental properties</p>
+      </div>
+      <div class="project animate__animated animate__fadeInRight">
+        <h3>E-learning Platform</h3>
+        <p>An online platform for learning</p>
+      </div>
+      <div class="project animate__animated animate__fadeInLeft">
+        <h3>House rental database management system</h3>
+        <p>Developed with SQL</p>
+      </div>
+      <div class="project animate__animated animate__fadeInRight">
+        <h3>Several simple video games such as Tic Tac Toe, Snake and Hangman</h3>
+        <p>Developed with python pygame library</p>
+      </div>
+    </section>
+
+    <section id="contact" style="display: none;" class="animate__animated animate__fadeIn">
+      <h2>Contact Me</h2>
+      <p>You can email me at yonatanassefa60@gmail.com</p>
+      <p>Tel: +251932223954</p>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              document.querySelectorAll('section').forEach(section => {
+                  section.style.display = 'none';
+              });
+              const targetId = this.getAttribute('href').substring(1);
+              const targetSection = document.getElementById(targetId);
+              targetSection.style.display = 'block';
+              this.classList.add('bubble');
+              targetSection.scrollIntoView({
+                  behavior: 'smooth'
+              });
+              setTimeout(() => {
+                  this.classList.remove('bubble');
+              }, 300);
+          });
+      });
+    </script>
+  </body>
+  </html>
